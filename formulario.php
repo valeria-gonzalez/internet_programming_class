@@ -21,16 +21,15 @@
                             <a href = "index.html">HOME</a>
                         </li>
                         <li>
-                            <a href = "formulario.html">FORM</a>
+                            <a href = "formulario.php">FORM</a>
                         </li>
                     </ul>
                 </div> <!-- end nav -->
             </div> <!-- end header -->
 
             <div id = "content">
-                <h1>Mi Contacto</h1>
                 <div class = "content-form">
-                    <form action = "formulario.html" method = "get" id = "form1">
+                    <form action = "store.php" method = "POST" id = "form1">
                         <div class = "form-group">
                             <label for="name">Nombre</label>
                             <input type="text" id="name" name="name" class = "form-control" placeholder = "Nombre completo">
@@ -54,7 +53,7 @@
                         </div>
                         
                         <div class = "form-check form-check-inline">
-                            <input type="radio" id="other" name="check" value="other" class = "form-check-input">
+                            <input type="radio" id="other" name="check" value="other" class = "form-check-input" checked>
                             <label class = "form-check-label" for="other">Other</label>
                         </div>
                         
@@ -76,12 +75,57 @@
                         </select><br>
                         
                         <div class = "form-group form-check">
-                            <input type="checkbox" id="hire" name="hire" value="hire" class = "form-check-input">
+                            <input type="checkbox" id="hire" name="hire" value="1" class = "form-check-input">
                             <label for="hire" class = "form-check-label"> Me interesa contratarte </label>
                         </div> 
                         <input type="submit" value = "Submit" class = "btn btn-primary">
                     </form>
+                </div><!-- end content-form -->
+                
+                <div class = "projects">
+                    <h1> Contactos </h1>
+                    <table class = "contacts-table" >
+                        <thead>
+                            <tr>
+                                <td> Nombre </td>
+                                <td> Correo </td>
+                                <td> Genero </td>
+                                <td> Password </td>
+                                <td> Comment </td>
+                                <td> City </td>
+                                <td> Hire </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                require('queries.php');
+                                $contacts = retrieve_contacts();
+                                foreach ($contacts as $row){
+                                    $name = $row['name'];
+                                    $email = $row['email'];
+                                    $gender = $row['gender'];
+                                    $password = $row['password'];
+                                    $comment = $row['comment'];
+                                    $city = $row['city'];
+                                    $hire = $row['hire'];
+
+                                    echo "  <tr>
+                                                <td>$name</td>
+                                                <td>$email</td>
+                                                <td>$gender</td>
+                                                <td>$password</td>
+                                                <td>$comment</td>
+                                                <td>$city</td>
+                                                <td>$hire</td>
+                                            </tr>
+                                        ";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
+
+                
             </div> <!-- end content -->
 
             <div id = "footer">

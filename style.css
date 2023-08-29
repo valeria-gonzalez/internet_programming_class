@@ -156,9 +156,9 @@ body {
 .projects-table td {
     padding: 3%;
     background-color: var(--light-yellow);
-    border-style: solid;
+    /*border-style: solid;
     border-color: var(--gray);
-    border-radius: 10px;
+    border-radius: 10px;*/
     overflow-wrap: break-word;
     hyphens: auto;
 }
@@ -167,9 +167,9 @@ body {
     font-weight: 800;
     background-color: var(--white);
     color: var(--black);
-    border-style: solid;
+    /*border-style: solid;
     
-    border-radius: 10px;
+    border-radius: 10px;*/
     text-align: center;
 }
 
@@ -189,46 +189,30 @@ body {
     border-style: solid;
     border-radius: 10px;
     border-color: var(--gray);
-    width: 70%;
+    width: 45%;
 }
 
+.double {
+    display: flex;
+    justify-content: space-evenly;
+}
 
-/*.content-form #form1 {
+.form-control {
+    width: 100%;
+}
+
+.contacts-table {
+    border-radius: 10px;
     font-size: large;
 }
 
-.content-form #form1 label {
-    display: block;
-    margin-bottom:1%;
-    margin-top: 1%;
-    font-weight: 600;
-}
-
-.content-form #form1 #inline {
-    display: inline;
-}
-
-.content-form #form1 input {
-    border-radius: 5px;
-    width: 80%;
-    height: 30px;
+.contacts-table td {
+    /*padding: 3%;*/
+    background-color: var(--white);
+    /*border-radius: 10px;*/
     border-style: solid;
     border-color: var(--gray);
+    
+    /*overflow-wrap: break-word;
+    hyphens: auto;*/
 }
-
-.content-form #form1 .no-width {
-    width: 10%;
-}
-
-.content-form #form1 textarea {
-    border-radius: 5px;
-    border-style: solid;
-    border-color: var(--gray);
-    width: 80%;
-}
-
-.content-form #form1 .submit-btn {
-    background-color: var(--yellow);
-    font-weight: 800;
-    font-size: large;
-}*/
