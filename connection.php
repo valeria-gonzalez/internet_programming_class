@@ -1,9 +1,9 @@
 <?php 
     function connect_database(){
-        $servername = "localhost";
-        $username = "progra_internet";
-        $password = "ayuda";
-        $dbname = "tarea1";
+        $servername = "";
+        $username = "";
+        $password = "";
+        $dbname = "";
 
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
